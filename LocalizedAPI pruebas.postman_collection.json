@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "0953c0c8-3d1f-4c07-b4c2-eda99b31d886",
+		"name": "LocalizedAPI pruebas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14717882"
+	},
+	"item": [
+		{
+			"name": "Post String COMUNES Ejemplo ESPAÑOL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is a string\", function () {\r",
+							"    pm.expect(pm.response.text() === String)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches the expected string in 'es' culture\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"El nombre de este común es Patata y su cantidad es 4. Su valor individual es 0,56, y su valor total es 2,24 €.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en-US, en",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 5,\r\n  \"name\": \"Patata\",\r\n  \"quantity\": 4,\r\n  \"value\": 0.56\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/comunes/string",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"comunes",
+						"string"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post String COMUNES Ejemplo Fecha ESPAÑOL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is a string\", function () {\r",
+							"    pm.expect(pm.response.text() === String)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en-US, en",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 5,\r\n  \"name\": \"Patata\",\r\n  \"quantity\": 4,\r\n  \"value\": 0.56\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/comunes/creation-date",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"comunes",
+						"creation-date"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post String COMUNES Ejemplo Fecha INGLES",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is a string\", function () {\r",
+							"    pm.expect(pm.response.text() === String)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en-US, en",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 5,\r\n  \"name\": \"Patata\",\r\n  \"quantity\": 4,\r\n  \"value\": 0.56\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/comunes/creation-date",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"comunes",
+						"creation-date"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post String COMUNES Ejemplo INGLES",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is a string\", function () {\r",
+							"    pm.expect(pm.response.text() === String)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches the expected string in 'en-US' culture\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"This Common's name is Patata and its quantity is 4. Its individual value is 0.56, and its total value is $2.24.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 5,\r\n  \"name\": \"Patata\",\r\n  \"quantity\": 4,\r\n  \"value\": 0.56\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/comunes/string",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"comunes",
+						"string"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post String BASES Ejemplo ESPAÑOL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is a string\", function () {\r",
+							"    pm.expect(pm.response.text() === String)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches the expected string in 'es' culture\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Esta base se llama Boniato, su color es Rojo y su descripción es la siguiente: Es como una patata, pero dulce\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en-US, en",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 2,\r\n  \"name\": \"Boniato\",\r\n  \"description\": \"Es como una patata, pero dulce\",\r\n  \"color\": {\r\n    \"id\": 3,\r\n    \"name\": \"Rojo\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/bases/string",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"bases",
+						"string"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post String BASES Ejemplo INGLES",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body is a string\", function () {\r",
+							"    pm.expect(pm.response.text() === String)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches the expected string in 'en-US' culture\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"This base's name is Boniato, its color is Rojo and its description is the following: Es como una patata, pero dulce\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en-US, en",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 2,\r\n  \"name\": \"Boniato\",\r\n  \"description\": \"Es como una patata, pero dulce\",\r\n  \"color\": {\r\n    \"id\": 3,\r\n    \"name\": \"Rojo\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/bases/string",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"bases",
+						"string"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "https://localhost:{{port}}/api",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "7268",
+			"type": "string"
+		}
+	]
+}

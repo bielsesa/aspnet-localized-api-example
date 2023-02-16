@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>8055321d-5de7-4186-b331-976c2cc92af2</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <RootNamespace>dir.masterpan_erp</RootNamespace>
+    <AssemblyName>dir.masterpan_erp.localized.api</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.11" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Localization.Bases\Localization.Bases.csproj" />
+    <ProjectReference Include="..\Localization.Comunes\Localization.Comunes.csproj" />
+    <ProjectReference Include="..\LocalizedAPI.Domain\LocalizedAPI.Domain.csproj" />
+    <ProjectReference Include="..\LocalizedAPI.Services\LocalizedAPI.Services.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>dir.masterpan_erp.Services</AssemblyName>
+    <RootNamespace>dir.masterpan_erp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Localization.Bases\Localization.Bases.csproj" />
+    <ProjectReference Include="..\Localization.Comunes\Localization.Comunes.csproj" />
+    <ProjectReference Include="..\LocalizedAPI.Domain\LocalizedAPI.Domain.csproj" />
+    <ProjectReference Include="..\LocalizedAPI.XCutting\LocalizedAPI.XCutting.csproj" />
+  </ItemGroup>
+
+</Project>
